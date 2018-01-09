@@ -1,0 +1,150 @@
+:root {
+	font-family: Roboto;
+	font-size: calc(12px + 1vw);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: radial-gradient(rgba(103, 182, 225, 0.5), rgb(103, 183, 225));
+	margin: 0;
+	grid-auto-flow: column;
+}
+body, header, form, form > *, form > * > *, label, input {
+	display: grid;
+	align-content: center;
+	align-items: center;
+}
+input, button, select {
+	cursor: pointer;
+}
+
+header {
+	padding: 1rem;
+	justify-items: end;
+}
+header img {
+	margin-bottom: 1rem;
+	max-width: 10rem;
+}
+h1 {
+	font-size: 3em;
+	margin: 0;
+}
+h2 {
+	font-size: 2em;
+	margin: 0;
+}
+
+main {
+	overflow-y: auto;
+	padding: 1rem;
+	max-height: 100vh;
+}
+
+#user-search {
+	position: sticky;
+	top: 0;
+}
+
+input[type=text], button, select {
+	-webkit-appearance: none;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: none;
+	border-radius: 0.25rem;
+	font: inherit;
+	padding: 0.4rem 0.5rem;
+	width: 100%;
+}
+button {
+	background-color: #67b7e1;
+	color: #000;
+	animation: FadeIn 0.5s ease-out;
+}
+
+input[type=checkbox] {
+	justify-content: center;
+	-webkit-appearance: none;
+	color: transparent;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 0.1em inset;
+	border-radius: 0.2em;
+	font-size: 1.25em;
+	margin: 0.1rem;
+	outline: none;
+	width: 1em;
+	height: 1em;
+	transition: 0.3s;
+}
+input[type=checkbox]:checked {
+	background-color: #67b7e1;
+	color: #fff;
+	box-shadow: none;
+}
+input[type=checkbox]:before {
+	content: '✓';
+}
+input[type=checkbox] + span {
+	font-size: 0.8em;
+}
+
+form {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 0.8rem;
+	padding: 1rem;
+	grid-gap: 1rem;
+	/* max-width: 25vw; */
+	grid-template-columns: 1fr 1fr;
+	width: 50vw;
+	animation: FadeIn 0.5s ease-out;
+}
+form > * {
+	grid-gap: 0.35rem;
+}
+form > * > *, form > * > * > * {
+	grid-gap: 0.35rem;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content;
+}
+form > * > span {
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	font-size: 0.7em;
+	font-weight: 100;
+}
+
+/* .actions {
+	grid-column: 1 / -1;
+} */
+
+iframe,
+form.edit-mode .actions .check-in,
+form.edit-mode .actions .print,
+form:not(.edit-mode) .actions .update,
+form:not(.edit-mode) .actions .revert {
+	display: none;
+}
+
+
+@keyframes FadeIn {
+	from {
+		opacity: 0;
+		transform: translate(50%);
+		max-height: 0;
+		overflow: hidden;
+	}
+	to {
+		max-height: 100vh;
+	}
+}
+
+
+form.checked-in {
+	background-color: rgba(211, 255, 211, 0.5);
+	/* box-shadow: limegreen 0 1px 0 0.15rem inset; */
+}
+form.checked-in .check-in {
+	background-color: #79d237;
+	pointer-events: none;
+}

@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="frontend.css">
+
+<header>
+	<img src="logo.svg">
+	<h1>Welcome</h1>
+	<h2>Los Altos Hacks III</h2>
+</header>
+
+<main>
+	<form id="user-search">
+		<label>
+			<span>First Name</span>
+			<input type="text" name="first" placeholder="Ella">
+		</label>
+		<label>
+			<span>Last Name</span>
+			<input type="text" name="last" placeholder="Haxx">
+		</label>
+		<button type="submit">Search</button>
+	</form>
+
+	<div id="users"></div>
+</main>
+
+<template id="user-template">
+	<form class="user">
+		<label>
+			<span>First Name</span>
+			<input type="text" name="first" placeholder="Ella">
+		</label>
+		<label>
+			<span>Last Name</span>
+			<input type="text" name="last" placeholder="Haxx">
+		</label>
+		<label>
+			<span>Is a</span>
+			<select name="type" value="hacker">
+				<option value="hacker">Hacker</option>
+				<option value="mentor">Mentor</option>
+				<option value="organizer">Organizer</option>
+			</select>
+		</label>
+		<label>
+			<span>From</span>
+			<input type="text" name="organization" placeholder="School of Hacks">
+		</label>
+		<div>
+			<span>Dietary Restrictions</span>
+			<div>
+				<label><input type="checkbox" name="vegan"><span>Vegan</span></label>
+				<label><input type="checkbox" name="gluten"><span>Gluten Free</span></label>
+			</div>
+		</div>
+		<div class="actions">
+			<button class="check-in" type="submit">Check In</button>
+			<button class="print">Print</button>
+			<button class="update">Update</button>
+			<button class="revert">Revert</button>
+		</div>
+	</form>
+</template>
+
+<script src="frontend.js"></script>

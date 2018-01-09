@@ -1,0 +1,16 @@
+{
+  "name": "losaltoshacks-checkin",
+  "version": "1.0.0",
+  "description": "A web app and database server to allow Los Altos Hacks III attendees to check into events using their nametags.",
+  "main": "app.js",
+  "scripts": {
+    "run": "node app.js"
+  },
+  "author": "Darryl Yeo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.14.8",
+    "shortid": "^2.2.8"
+  }
+}
